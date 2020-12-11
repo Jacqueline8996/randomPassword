@@ -1,11 +1,23 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Defing the arrays for pass word options 
+
+
+var type = [alphabet, numbers,symbol]
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 var symbol = ['','!', '"','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>', '?','@','[', '\\', ']','^','_','`','{','|','}','~'];
+var lowerUpper = ['lower','Upper']
+var criteria = {
+    'lowercase': 'abcdefghijklmnopqrstuvwxyz'
+    'uppercase': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    'number':'0123456789';
+    'symbol' = ' ! " $%&*+,-./:;<=>?@[\\]^_`{|,}~ ';
+
+}
 var smallLength = 8
 var largeLength = 128
+var passwordPut = ''
 
 //function for prompt 
 function userInput(){
@@ -28,6 +40,7 @@ function userInput(){
 
     //ask if lower case /ask if there is uppper cases (if statement) nedd to validate data make data validation function
     var lowerCase = confirm("Do you want lowerCase?");
+    console.log(lowerCase)
 
     //ask if uppercase
     var UpperCase = confirm("Do you want UpperCase?");
@@ -43,7 +56,31 @@ function numberGen(){
 }
 
 
+function generatePassword(){
 
+//take user desired length 
+for(var i = 0;i < passwordLength;i++){
+    numberGen(type){
+        type[num]
+    numberGen(alphabet)
+        if (type[num] === alphabet)
+    
+    numberGen(alphabet)
+        
+    }
+    
+    
+    
+
+
+ console.log(character);
+
+}
+
+
+
+
+}
 
 //Code to generate the password from input 
 
@@ -53,7 +90,6 @@ function writePassword() {
     userInput();
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
 
 }
