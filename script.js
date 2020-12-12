@@ -1,23 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// Defing the arrays for pass word options 
+// Defing the strings for pass word options 
+var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var number = '0123456789';
+var symbol= ' ! " $%&*+,-./:;<=>?@[]^_`{|,}~ ';
+var smallLength = 8;
+var largeLength = 128;
+var passwordPut = '';
+var passwordArray = [];
 
-
-var type = [alphabet, numbers,symbol]
-var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var numbers = ['0','1','2','3','4','5','6','7','8','9'];
-var symbol = ['','!', '"','$','%','&',"'",'(',')','*','+',',','-','.','/',':',';','<','=','>', '?','@','[', '\\', ']','^','_','`','{','|','}','~'];
-var lowerUpper = ['lower','Upper']
-var criteria = {
-    'lowercase': 'abcdefghijklmnopqrstuvwxyz'
-    'uppercase': 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    'number':'0123456789';
-    'symbol' = ' ! " $%&*+,-./:;<=>?@[\\]^_`{|,}~ ';
-
-}
-var smallLength = 8
-var largeLength = 128
-var passwordPut = ''
 
 //function for prompt 
 function userInput(){
@@ -39,44 +31,39 @@ function userInput(){
     }
 
     //ask if lower case /ask if there is uppper cases (if statement) nedd to validate data make data validation function
-    var lowerCase = confirm("Do you want lowerCase?");
-    console.log(lowerCase)
 
-    //ask if uppercase
-    var UpperCase = confirm("Do you want UpperCase?");
-    //ask if they want numbers 
-    var numberChar = confirm("Do you want numbers?");
-    //ask for special charcters 
-    var specialChar = confirm("Do you want Special Characters?");
+    if (confirm("Do you want lowerCase?") == true){
+        passwordArray.append(lowercase);
+    }
+    else if (confirm("Do you want UpperCase?")== true){
+        passwordArray.append(uppercase);
+    }
+    else if (confirm("Do you want numbers?")== true){
+        passwordArray.append(number);
+
+    }
+    else if (confirm('Do you want Special Characters?')== true){
+        passwordArray.append(symbol);
+
+    }
+    
 }
 
-//function fo number generator
-function numberGen(){
-    var num = Math.floor(Math.random() * (Array.length))
-}
 
 
 function generatePassword(){
 
 //take user desired length 
-for(var i = 0;i < passwordLength;i++){
-    numberGen(type){
-        type[num]
-    numberGen(alphabet)
-        if (type[num] === alphabet)
-    
-    numberGen(alphabet)
+for(var i = 0;i < criteria.keys(criteria).length;i++){
+    var num = Math.floor(Math.random() * (criteria.length))
+    passwordPut += (criteria.value[num]);
         
     }
-    
-    
-    
-
-
- console.log(character);
 
 }
 
+function determine ();{
+    
 
 
 
