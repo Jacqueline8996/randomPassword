@@ -18,7 +18,7 @@ function userInput(){
    
     //verifying it is within the paramaters  
 
-    for (passwordLength < smallLength ;passwordLength > largeLength;){
+     for (passwordLength < smallLength ;passwordLength > largeLength;){
         //does not work with min 
         if (passwordLength < smallLength){
             alert("Password is too short , try again!!!!");
@@ -31,21 +31,26 @@ function userInput(){
     }
 
     //ask if lower case /ask if there is uppper cases (if statement) nedd to validate data make data validation function
+    var lowerCaseCon = confirm("Do you want lowerCase?");
+    var uppercaseCon = confirm("Do you want UpperCase?");
+    var numberCon = confirm("Do you want numbers?");
+    var symbolCon = confirm('Do you want Special Characters?');
 
-    if (confirm("Do you want lowerCase?") == true){
-        passwordArray.append(lowercase);
+    
+   if (lowerCaseCon == true){
+      passwordArray.append(lowercase);
     }
-    else if (confirm("Do you want UpperCase?")== true){
+    else if (uppercaseCon == true){
         passwordArray.append(uppercase);
     }
-    else if (confirm("Do you want numbers?")== true){
+    else if (numberCon == true){
         passwordArray.append(number);
 
     }
-    else if (confirm('Do you want Special Characters?')== true){
+    else if (symbolCon == true){
         passwordArray.append(symbol);
-
     }
+
     
 }
 
@@ -62,12 +67,6 @@ for(var i = 0;i < criteria.keys(criteria).length;i++){
 
 }
 
-function determine ();{
-    
-
-
-
-}
 
 //Code to generate the password from input 
 
