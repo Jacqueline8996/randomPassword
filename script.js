@@ -54,23 +54,39 @@ function userInput(){
 
 function generatePassword(){
 
-    //take user desired length 
-    for(var i = 0;i < passwordLength;i++){  
+    // for loop that goes through the length of the password array once (guarantees at least one of each chose value)
+    for(var i = 0;i < passwordArray.length;i++){
+        //gets random numbers for which option were chosen 
+        var randomList = Math.floor(Math.random() * (passwordArray.length));
+        // gets character in the option choosen 
+        var randomCharacter = Math.floor(Math.random() * (passwordArray[randomList].length));
+        //adds it to the empty string 
+        passwordPut += (passwordArray[randomList][randomCharacter]);
+    }
+    
 
-        for(var i = 0;i < passwordArray.length;i++){
-             var num = Math.floor(Math.random() * (passwordArray.length));
-            passwordPut += (passwordArray.value[num]);
-        
-        }
+     var remainLenght = passwordLength - passwordArrayLength
+    
+
+    // iterate over that remainingLength
+    for(var i = 0;i < remainLenght.length;i++){
+         //gets random numbers for which option were chosen 
+         var randomList = Math.floor(Math.random() * (passwordArray.length));
+         // gets character in the option choosen 
+         var randomCharacter = Math.floor(Math.random() * (passwordArray[randomList].length));
+         //adds it to the empty string 
+         passwordPut += (passwordArray[randomList][randomCharacter]);
 
     }
-    return(passwordPut);
+console.log(passwordPut)
+
+    // optional, jumble it up (rerrange values in array rondomly)
+
+    // at this point you passwordPut 
+ return (passwordPut);
+ 
+    
 }
-
-
-//Code to generate the password from input 
-
-
 
 
 
