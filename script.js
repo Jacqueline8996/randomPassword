@@ -16,10 +16,9 @@ function userInput(){
 
     var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");
    
-    //verifying it is within the paramaters  
-
-     for (passwordLength < smallLength ;passwordLength > largeLength;){
-        //does not work with min 
+    //verifying it is within the paramaters if it is within the approprate length or not  
+    
+    while ((passwordLength < smallLength) || (passwordLength > largeLength)) {
         if (passwordLength < smallLength){
             alert("Password is too short , try again!!!!");
             
@@ -27,7 +26,7 @@ function userInput(){
         else{
             alert("password is too long , try again!!!!"); 
         }
-        var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");
+        var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");        
     }
 
     //ask if lower case /ask if there is uppper cases (if statement) nedd to validate data make data validation function
@@ -36,6 +35,7 @@ function userInput(){
     var numberCon = confirm("Do you want numbers?");
     var symbolCon = confirm('Do you want Special Characters?');
 
+    //adds string to list to be randamized
    if (lowerCaseCon == true){
       passwordArray.append(lowercase);
     }
@@ -54,16 +54,26 @@ function userInput(){
 
 function generatePassword(){
 
-//take user desired length 
-for(var i = 0;i < passwordArray.length;i++){
-    var num = Math.floor(Math.random() * (passwordArray.length))
-    passwordPut += (passwordArray.value[num]);
-        
-    }
+    //take user desired length 
+    for(var i = 0;i < passwordLength;i++){  
 
+        for(var i = 0;i < passwordArray.length;i++){
+             var num = Math.floor(Math.random() * (passwordArray.length));
+            passwordPut += (passwordArray.value[num]);
+        
+        }
+
+    }
+    return(passwordPut);
 }
 
+
 //Code to generate the password from input 
+
+
+
+
+
 
 // Write password to the #password input
 function writePassword() {

@@ -1,6 +1,6 @@
 
 # Summary:
-This page will generate a random password that within the desired user input. 
+This page will generate a random password that within the desired user input from the prompt. 
 there will be option given on the following: 
 * Will get to choose the length of the password between 8 to 128 characters
 * if they want lower case 
