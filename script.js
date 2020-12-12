@@ -36,7 +36,6 @@ function userInput(){
     var numberCon = confirm("Do you want numbers?");
     var symbolCon = confirm('Do you want Special Characters?');
 
-    
    if (lowerCaseCon == true){
       passwordArray.append(lowercase);
     }
@@ -51,22 +50,18 @@ function userInput(){
         passwordArray.append(symbol);
     }
 
-    
 }
-
-
 
 function generatePassword(){
 
 //take user desired length 
-for(var i = 0;i < criteria.keys(criteria).length;i++){
-    var num = Math.floor(Math.random() * (criteria.length))
-    passwordPut += (criteria.value[num]);
+for(var i = 0;i < passwordArray.length;i++){
+    var num = Math.floor(Math.random() * (passwordArray.length))
+    passwordPut += (passwordArray.value[num]);
         
     }
 
 }
-
 
 //Code to generate the password from input 
 
