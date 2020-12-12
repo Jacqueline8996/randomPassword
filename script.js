@@ -17,11 +17,9 @@ function userInput(){
     var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");
    
     //verifying it is within the paramaters if it is within the approprate length or not  
-    
     while ((passwordLength < smallLength) || (passwordLength > largeLength)) {
         if (passwordLength < smallLength){
-            alert("Password is too short , try again!!!!");
-            
+            alert("Password is too short , try again!!!!");  
         }
         else{
             alert("password is too long , try again!!!!"); 
@@ -36,24 +34,23 @@ function userInput(){
     var symbolCon = confirm('Do you want Special Characters?');
 
     //adds string to list to be randamized
-   if (lowerCaseCon == true){
-      passwordArray.append(lowercase);
+    if (lowerCaseCon == true){
+        passwordArray.push(lowercase);
     }
-    else if (uppercaseCon == true){
-        passwordArray.append(uppercase);
+    if (uppercaseCon == true){
+        passwordArray.push(uppercase);
     }
-    else if (numberCon == true){
-        passwordArray.append(number);
-
+    if (numberCon == true){
+        passwordArray.push(number);
     }
-    else if (symbolCon == true){
-        passwordArray.append(symbol);
+    if (symbolCon == true){
+        passwordArray.push(symbol);
     }
-
+    console.log('Passwordarray',passwordArray)
 }
 
 function generatePassword(){
-
+    console.log('Passwordarray',passwordArray)
     // for loop that goes through the length of the password array once (guarantees at least one of each chose value)
     for(var i = 0;i < passwordArray.length;i++){
         //gets random numbers for which option were chosen 
@@ -65,7 +62,7 @@ function generatePassword(){
     }
     
 
-     var remainLenght = passwordLength - passwordArrayLength
+     var remainLenght = parseInt(passwordLength.length) - parseInt(passwordArrayLength.length);
     
 
     // iterate over that remainingLength
