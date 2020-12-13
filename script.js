@@ -9,12 +9,13 @@ var smallLength = 8;
 var largeLength = 128;
 var passwordPut = '';
 var passwordArray = [];
+var finalLength = '';
 
 
 //function for prompt 
 function userInput(){
 
-    var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");
+    var passwordLength = Number(window.prompt("How Long do you want your password? (Please be between 8 and 128 characters)"));
    
     //verifying it is within the paramaters if it is within the approprate length or not  
     while ((passwordLength < smallLength) || (passwordLength > largeLength)) {
@@ -46,11 +47,19 @@ function userInput(){
     if (symbolCon == true){
         passwordArray.push(symbol);
     }
-    console.log('Passwordarray',passwordArray)
+   
+    console.log('Passwordarray',passwordArray);
+    console.log('Passwordlength',passwordLength);
+    var finalLength = parseInt(passwordLength);
+    console.log('Passwordlength',finalLength);
+    return finalLength;
 }
 
 function generatePassword(){
-    console.log('Passwordarray',passwordArray)
+   // userInput();
+    console.log('I am in gen password');
+    console.log('Passwordarray',passwordArray);
+    console.log('Passwordfinal',finalLength);
     // for loop that goes through the length of the password array once (guarantees at least one of each chose value)
     for(var i = 0;i < passwordArray.length;i++){
         //gets random numbers for which option were chosen 
@@ -61,8 +70,10 @@ function generatePassword(){
         passwordPut += (passwordArray[randomList][randomCharacter]);
     }
     
-
-     var remainLenght = parseInt(passwordLength.length) - parseInt(passwordArrayLength.length);
+    console.log('array length ',passwordArray.length);
+    
+   
+    var remainLenght = finalLength - passwordArray.length;
     
 
     // iterate over that remainingLength
@@ -84,9 +95,6 @@ console.log(passwordPut)
  
     
 }
-
-
-
 
 // Write password to the #password input
 function writePassword() {
