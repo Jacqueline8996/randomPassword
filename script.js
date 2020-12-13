@@ -11,7 +11,6 @@ var passwordPut = '';
 var passwordArray = [];
 
 
-
 //function for prompt 
 function userInput(){
 
@@ -48,65 +47,62 @@ function userInput(){
         passwordArray.push(symbol);
     }
    
-    console.log('Passwordarray',passwordArray);
-    console.log('Passwordlength',passwordLength);
-    
-    var finalLength = passwordLength;
-    console.log('PasswordlengthFinal',finalLength);
-    return finalLength;
+    //return user input 
+    return passwordLength;
 }
-function generateRandomChara(){
+function generateRandomCharaFull(){
     //gets random numbers for which option were chosen 
     var randomList = Math.floor(Math.random() * (passwordArray.length));
     // gets character in the option choosen 
     var randomCharacter = Math.floor(Math.random() * (passwordArray[randomList].length));
     //adds it to the empty string 
     passwordPut += (passwordArray[randomList][randomCharacter]);
-    
+
 }
 
-function generatePassword(){
-    finalLength = userInput();
-    console.log('I am in gen password');
-    console.log('Passwordarray',passwordArray);
-    console.log('PasswordlengthFinal',finalLength);
+//shuffels string so everything is even more random
+function randomShuffle(generatePass) { 
+    //passes password generated and coverts it to a array 
+    var arr = generatePass.split('');          
+    arr.sort(function() {
+      return 0.5 - Math.random();
+    });  
+    //new array gets turned into a string
+    generatePass = arr.join('');                
+    return generatePass;                        
+  }
 
-    
+function generatePassword(){
+    //gets the information from user to continue the function
+    finalLength = userInput();
+
     // for loop that goes through the length of the password array once (guarantees at least one of each chose value)
     for(var i = 0;i < passwordArray.length;i++){
-        //gets the random character
-        generateRandomChara();
+        //gets the random character for each one of the critera
+        var randomCharacter = Math.floor(Math.random() * (passwordArray[i].length));
+        //adds it to the empty string 
+        passwordPut += (passwordArray[i][randomCharacter]); 
     }
-    
-    console.log('array length ',passwordArray.length);
-    
-   
-    var remainLenght = finalLength - passwordArray.length;
-    
 
-    // iterate over that remainingLength
+    var remainLenght = finalLength - passwordArray.length;
+    // iterate over that remainingLength to get the rest of the remaing character
     for(var i = 0;i < remainLenght;i++){
         //gets the random character
-        generateRandomChara();
+        generateRandomCharaFull();
     }
-console.log(passwordPut)
-console.log(passwordPut.length)
 
-    // optional, jumble it up (rerrange values in array rondomly)
+     //optional, jumble it up (rerrange values in array rondomly)
+     var shuffledPassword = randomShuffle(passwordPut);
 
-    // at this point you passwordPut 
- return (passwordPut);
- 
-    
+    //return the completly shuffeled password
+    return (shuffledPassword); 
 }
 
 // Write password to the #password input
 function writePassword() {
-
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
