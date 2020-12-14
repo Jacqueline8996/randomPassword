@@ -14,17 +14,17 @@ var passwordArray = [];
 //function for prompt 
 function userInput(){
 
-    var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");
+    var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)Refresh Page After each generation!");
    
     //verifying it is within the paramaters if it is within the approprate length or not  
     while ((passwordLength < smallLength) || (passwordLength > largeLength)) {
         if (passwordLength < smallLength){
-            alert("Password is too short , try again!!!!");  
+            alert("Password is too short,must be at least 8 characters long, try again!!!!");  
         }
         else{
-            alert("password is too long , try again!!!!"); 
+            alert("password is too long,can only be at max 128 characters long, try again!!!!"); 
         }
-        var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)");        
+        var passwordLength = prompt("How Long do you want your password? (Please be between 8 and 128 characters)Refresh Page After each generation!");        
     }
 
     //ask if lower case /ask if there is uppper cases (if statement) nedd to validate data make data validation function
