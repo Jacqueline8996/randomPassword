@@ -12,4 +12,5 @@ User will answer prompts to have a password generator with desired Criteria
  
 # Installation:
   There is no installation required for this page, all files can be viewed at the following link:
-* https://jacqueline8996.github.io/Homework3/ 
+* Live page: https://jacqueline8996.github.io/randomPassword/
+* Git hub :https://github.com/Jacqueline8996/randomPassword.git
